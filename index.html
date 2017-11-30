@@ -27,7 +27,18 @@
 				document.write("</tr>");			
 			}
 		}else{
-			alert("Valor no válido. vuelve a introducir un valor")
+			try{ /* comprobación de errores*/
+						if(x==" " && x!=0) throw "No has introducido nungún número";
+						if(isNaN(x)) throw "Valor no válido";
+						x= Number(x);
+						if(x<1) throw "El número es muy pequeño";
+						if(x>9) throw "El número es muy grande";
+
+					} 
+					catch(err){
+						alert ("Algo falla!!!. " + err);
+					}
+			alert("Vuelve a introducir un valor");
 					
 		}
 				
